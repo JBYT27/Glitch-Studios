@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
-
+<link rel="stylesheet" href="/codeeditor.css">
 <form method="post">
     <div class="form-group">
         <label for="title">Title</label>
@@ -14,8 +14,9 @@
 
     <div class="form-group">
         <label for="content">Content</label>
-        <textarea name="content" placeholder="Post content"
-                  class="form-control">{{ request.form['content'] or post['content'] }}</textarea>
+        <textarea name="content" id="mdeditor" cols="30" rows="10" class="form-control">
+{{ request.form['content'] or post['content'] }}
+        </textarea>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -23,10 +24,19 @@
 </form>
 <hr>
 
-
 <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
     <input type="submit" value="Delete Post"
             class="btn btn-danger btn-sm"
             onclick="return confirm('Are you sure you want to delete this post?')">
 </form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rawgit.com/Grafikart/JS-Markdown-Editor/master/dist/mdeditor.min.js"></script>
+<script>
+  var md = new MdEditor('#mdeditor', {
+    uploader: 'http://local.dev/Lab/MdEditor/app/upload.php',
+    preview: true,
+    images: [
+    ]
+  });
+</script>
 {% endblock %}

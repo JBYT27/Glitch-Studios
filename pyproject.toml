@@ -8,6 +8,7 @@ authors = ["Replit user <replituser@example.com>"]
 python = "^3.8"
 flask = "^1.1.2"
 werkzeug = "^1.0.1"
+markdown2 = "^2.4.0"
 
 [tool.poetry.dev-dependencies]
 

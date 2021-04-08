@@ -2,22 +2,35 @@
 
 {% block content %}
 <h1>{% block title %} Create a New Post {% endblock %}</h1>
+<link rel="stylesheet" href="/codeeditor.css">
+  <div class="starter-template">
+    <form method="POST">
+      <div class="form-group">
+        <label>Post Editor</label>
+            <input type="text" name="title" placeholder="Post title" class="form-control" value="{{ request.form['title'] }}"></input><br>
+        <textarea name="content" id="mdeditor" cols="30" rows="10" class="form-control">
+# Glitch Studios!
+  
+Hi, and welcome to the glitch studios code editor! And I'm here to give a quick tutorial on how this works! Lets get **started**!
 
-<form method="POST">
-  <div class="form-group">
-    <label for="title"></label>
-    <input type="text" name="title" placeholder="Post title" class="form-control" value="{{ request.form['title'] }}"></input>
+We use a special markdown editor module [from here](https://github.com/Grafikart/JS-Markdown-Editor). This allows you to use markdown as the text editor, and allows you to view markdown for the post! Cool right! So, use [this](https://www.markdownguide.org/cheat-sheet/) to see how to use markdown and make a good post! Then you hit the submit button, the post is then made public, and everyone can see it!
+
+We hope you enjoy Glitch Studios!
+        </textarea>
+      </div>
+      <button class="btn btn-primary"><strong>Post</strong></button>
+    </form>
   </div>
 
-  <div class="form-group">
-    <label for="content">Content</label>
-    <textarea name="content" placeholder="Post Content" class="form-control">{{ request.form['content'] }}</textarea>
-  </div>
-
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">Submit</button>
-    
-  </div>
-</form>
 <!-- pog yes very -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rawgit.com/Grafikart/JS-Markdown-Editor/master/dist/mdeditor.min.js"></script>
+<script>
+  var md = new MdEditor('#mdeditor', {
+    uploader: 'http://local.dev/Lab/MdEditor/app/upload.php',
+    preview: true,
+    images: [
+    ]
+  });
+</script>
 {% endblock %}

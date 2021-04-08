@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
     <h1>{% block title %} Welcome to Glitch studios {% endblock %}</h1>
     {% for post in posts %}
@@ -7,9 +6,27 @@
             <h2>{{ post['title'] }}</h2>
         </a>
         <span class="badge badge-primary">{{ post['created'] }}</span>
+
+        <!-- we have to do smth here, bc it already knows username, it keeps staying here -->
+        {% if username == "JBloves27" %}
         <a href="{{ url_for('edit', id=post['id']) }}">
             <span class="badge badge-warning">Edit</span>
         </a>
+        {% elif name == "darkdarcool" %}
+        <a href="{{ url_for('edit', id=post['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        {% elif username == "ch1ck3n" %}
+        <a href="{{ url_for('edit', id=post['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        {% endif %}
+        
+        
+        <!--<a href="{{ url_for('edit', id=post['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>-->
+        <div id="edit"></div>
         <hr>
     {% endfor %}
 {% endblock %}

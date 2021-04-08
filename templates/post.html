@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2><hr>
     <span class="badge badge-primary">{{ post['created'] }}</span>
-    <p>{{ post['content'] }}</p>
+    <p>{{ content|safe }}</p>
+    <!--{% if username == "JBloves27" %}
+    <a class="btn btn-primary">edit</a>
+    {% elif username == "darkdarcool" %}
+    <a class="btn btn-primary">edit</a>
+    {% elif username == "ch1ck3n" %}
+    <a class="btn btn-primary" href="/edit">edit</a>
+    {% endif %}-->
 {% endblock %}

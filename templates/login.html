@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if user_id %}
+	<h1>Hello, {{ username }}!</h1>
+  <p> Click the homepage logo to go back! </p>
+  {% elif name == "darkdarcool" %}
+  <h1>Hello, darkdarcool!</h1>
+  <p> Click the homepage logo to go back! </p>
+  {% else %}
+	Hello! Please log in to access more abilities!
+	<div>
+		<script authed="location.reload()" src="https://auth.turbio.repl.co/script.js"></script>
+	</div>
+	{% endif %}
+{% endblock %}
