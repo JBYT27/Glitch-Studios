@@ -30,9 +30,16 @@
               <a class="nav-link" href="{{url_for('create')}}">New Post</a>
             </li>
             {% elif username == "ch1ck3n" %}
+            
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('create')}}">New Post</a>
             </li>
+            <!-- Comment this out when jam over! -->
+            {% elif username %}
+            <li class="nav-item">
+            <a class="nav-link" href="{{url_for('create')}}">New Post</a>
+            </li>
+
             {% endif %}
 
             {% if username %}

@@ -3,10 +3,7 @@
 {% block content %}
 	{% if user_id %}
 	<h1>Hello, {{ username }}!</h1>
-  <p> Click the homepage logo to go back! </p>
-  {% elif name == "darkdarcool" %}
-  <h1>Hello, darkdarcool!</h1>
-  <p> Click the homepage logo to go back! </p>
+  <p> Click the homepage logo to go back {{ username }}! </p>
   {% else %}
 	Hello! Please log in to access more abilities!
 	<div>
