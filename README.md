@@ -20,6 +20,7 @@
 - Creating a post (only owners/mods when a jam is not currently happening.)
 - Markdown in posting (special thanks to [this](https://github.com/Grafikart/JS-Markdown-Editor) for allowing us to use markdown for posting!)
 - Different tabs in the navbar (posting, logging in, contributors)
+
 #### One thing we haven't managed to do so is the favicon. If you could let us know, it would help us a lot! Thanks!
 
 --- 
@@ -37,4 +38,4 @@
 ## Pings
 #### Yes. I know. I made a pings header. I just wanted to say sorry for all the useless pings, I just wanted to credit them because they helped a lot. Please don't think I'm trying to cycle farm, etc. Thanks! 
 
-# Baii!
+# Baii
